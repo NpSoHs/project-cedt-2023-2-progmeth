@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AchorPaneMain" prefHeight="750.0" prefWidth="600.0" style="-fx-background-image: url('/bg.png');" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="utils.StartPaneController">
+    <children>
+        <Button id="playButton" fx:id="PlayButton" layoutX="68.0" layoutY="202.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="46.0" prefWidth="101.0" style="-fx-background-color: #3c76e8; -fx-background-radius: 20; -fx-effect: DropShadow(three-pass-box, rgba(0,0,0,0.3), 10, 0.5, 0, 0);" text="Play" textFill="WHITE">
+            <font>
+                <Font name="Serif Bold" size="26.0" />
+            </font>
+        </Button>
+        <Button fx:id="helpButton" layoutX="200.0" layoutY="201.0" mnemonicParsing="false" onAction="#HelpPage" prefHeight="47.0" prefWidth="199.0" style="-fx-background-color: #3c76e8; -fx-background-radius: 20; -fx-effect: DropShadow(three-pass-box, rgba(0,0,0,0.3), 10, 0.5, 0, 0);" text="How To Play" textFill="WHITE">
+            <font>
+                <Font name="Serif Bold" size="26.0" />
+            </font>
+        </Button>
+        <Button fx:id="exitButton" layoutX="434.0" layoutY="203.0" mnemonicParsing="false" onAction="#exitProgram" prefHeight="46.0" prefWidth="101.0" style="-fx-background-color: #3c76e8; -fx-background-radius: 20; -fx-effect: DropShadow(three-pass-box, rgba(0,0,0,0.3), 10, 0.5, 0, 0);" text="Exit" textFill="WHITE">
+            <font>
+                <Font name="Serif Bold" size="26.0" />
+            </font>
+        </Button>
+        <ImageView fitHeight="132.0" fitWidth="435.0" layoutX="107.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="/logo.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="53.0" fitWidth="48.0" layoutX="142.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="/strawberry.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="46.0" fitWidth="55.0" layoutX="465.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="/croissant.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="53.0" fitWidth="48.0" layoutX="362.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="/cheese.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="53.0" fitWidth="48.0" layoutX="176.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="/vegetable.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="53.0" fitWidth="48.0" layoutX="99.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="/salad.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="45.0" fitWidth="40.0" layoutX="14.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="/butter.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="53.0" fitWidth="48.0" layoutX="533.0" layoutY="521.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="/banana.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="53.0" fitWidth="48.0" layoutX="514.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="/star.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="53.0" fitWidth="48.0" layoutX="378.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="/flies.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="53.0" fitWidth="48.0" layoutX="465.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="/strawberry.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="53.0" fitWidth="48.0" layoutX="276.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="/star.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="53.0" fitWidth="48.0" layoutX="95.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="/flies.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="53.0" fitWidth="48.0" layoutX="276.0" layoutY="673.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="/vegetable.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="53.0" fitWidth="48.0" layoutX="88.0" layoutY="675.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="/cheese.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="53.0" fitWidth="48.0" layoutX="461.0" layoutY="677.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="/croissant.png" />
+            </image>
+        </ImageView>
+        <AnchorPane fx:id="popupHelp" layoutX="68.0" layoutY="42.0" prefHeight="244.0" prefWidth="470.0" style="-fx-background-color: #a5a5a5; -fx-background-radius: 20; -fx-effect: DropShadow(three-pass-box, rgba(0,0,0,0.3), 10, 0.5, 0, 0); -fx-background-insets: -5; -fx-translate-z: -1;" translateY="1024.0" translateZ="-1.0">
+            <children>
+                <Label alignment="CENTER" layoutX="-1.0" layoutY="5.0" prefHeight="41.0" prefWidth="483.0" text="Salad VS Croissant" textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font name="System Bold" size="22.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutY="46.0" prefHeight="41.0" prefWidth="471.0" text="🥐 Croissant has to collect all butter" textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="-3.0" layoutY="66.0" prefHeight="41.0" prefWidth="471.0" text="🥗 Salad has to collect all vegetable" textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="7.0" layoutY="97.0" prefHeight="41.0" prefWidth="443.0" text="Also, there are a few more items which give you additional abilities" textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="11.0" layoutY="147.0" prefHeight="41.0" prefWidth="443.0" text="When both butter and vegetable is all collected, the game is OVER." textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="-3.0" layoutY="188.0" prefHeight="41.0" prefWidth="486.0" text="The player with the highest score is the winner🏆" textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font name="System Bold" size="21.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="18.0" layoutY="117.0" prefHeight="41.0" prefWidth="443.0" text="so don’t forget to collect them!" textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

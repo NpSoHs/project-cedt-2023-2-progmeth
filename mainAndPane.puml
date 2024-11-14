@@ -1,0 +1,150 @@
+@startuml
+class Pane.GamePanel {
+~ {static} CharacterBox croissantBox
+~ {static} CharacterBox saladBox
++ <<Create>> GamePanel()
++ {static} void updateSaladScoreLabel(int)
++ {static} void updateCroissantScoreLabel(int)
+}
+class Pane.RootPane {
+- {static} RootPane instance
+- <<Create>> RootPane()
++ {static} RootPane getRootPane()
++ {static} RootPane getInstance()
+}
+class Pane.PopUpEnd {
++ <<Create>> PopUpEnd(String,int,boolean,String)
++ void moveSubScene()
++ void winPopUp(String,int,String)
++ void tiePopUp(int)
+}
+class Pane.StartGame {
+- GraphicsContext gc
+~ boolean isEnd
+- {static} StartGame instance
++ <<Create>> StartGame(GameController)
++ {static} StartGame getInstance()
++ void clear()
+}
+class main.Main {
++ {static} void main(String[])
++ void start(Stage)
+}
+class main.Renderer {
++ {static} void render(GraphicsContext,GameController)
+- {static} void renderMap(GraphicsContext,GameController)
+- {static} void renderCharacters(GraphicsContext,GameController)
+- {static} void renderCharacter(GraphicsContext,Character)
+}
+class main.GameController {
+- {static} GameController instance
+- int BLOCK_SIZE
+- int N_BLOCKS
+- int SCREEN_SIZE
+- int MAP_ROW
+- int MAP_COL
+- int[][] MAP
+- boolean isEnd
+- short[] levelData
+- Salad salad
+- Croissant croissant
+- Vegetable vegetable
+- Butter butter
+- Strawberry strawberry
+- Cheese cheese
+- Flies fly
+- BananaPeel bananaPeel
+- int vegInMap
+- int croissantInMap
+- Image butterImage
+- Image bananaImage
+- Image strawberryImage
+- Image cheeseImage
+- Image flyImage
+- Image vegetableImage
+- Image background
+- Image eit
+~ Sound sound
+- Set<KeyCode> pressedKeys
++ int getBLOCK_SIZE()
++ int getSCREEN_SIZE()
++ int getMAP_ROW()
++ int getMAP_COL()
++ int[][] getMAP()
++ Set<KeyCode> getPressedKeys()
++ Salad getSalad()
++ Croissant getCroissant()
++ Image getButterImage()
++ Image getStrawberryImage()
++ Image getBananaImage()
++ Image getFlyImage()
++ Image getCheeseImage()
++ Image getVegImage()
++ Image getBackground()
++ Image getEit()
++ short[] getLevelData()
++ boolean isEnd()
++ void setEnd(boolean)
++ {static} GameController getInstance()
+- void initGame(Stage)
++ void initGame()
++ void handleInput(KeyCode)
+- void initMap()
+- void initCharacters()
++ void useItem(Item,Character)
+- boolean checkTie()
+- Character checkWinnerCharacter()
++ Item checkTypeFood(int)
++ void randomItem()
++ boolean update()
++ void start(Stage)
++ void clear()
+}
+class Pane.EndSubScene {
+~ PopUpEnd popUpEnd
++ <<Create>> EndSubScene(String,int,boolean,String)
++ void moveSubScene()
+}
+class main.GameWindow {
+- GameController gameController
+~ Sound sound
++ <<Create>> GameWindow()
+- void initGame()
++ void playMusic(int)
++ void stopMusic()
++ void playSE(int)
+}
+class Pane.ItemDescription {
++ <<Create>> ItemDescription(String,String)
+}
+class main.Sound {
+~ Clip clip
+~ URL[] soundURL
++ <<Create>> Sound()
++ void setFile(int)
++ void play()
++ void loop()
++ void stop()
++ void setVolume(float)
+}
+class Pane.CharacterBox {
++ Label CharacterScoreLabel
++ <<Create>> CharacterBox(String,String,ItemDescription,ItemDescription)
++ void updateCharacterScoreLabel(String)
+}
+class Pane.ItemBox {
++ <<Create>> ItemBox(String,String)
+}
+
+
+javafx.scene.layout.VBox <|-- Pane.GamePanel
+javafx.scene.layout.AnchorPane <|-- Pane.RootPane
+javafx.scene.SubScene <|-- Pane.PopUpEnd
+javafx.scene.Group <|-- Pane.StartGame
+javafx.application.Application <|-- main.Main
+javafx.scene.SubScene <|-- Pane.EndSubScene
+javafx.stage.Stage <|-- main.GameWindow
+javafx.scene.layout.HBox <|-- Pane.ItemDescription
+javafx.scene.layout.HBox <|-- Pane.CharacterBox
+javafx.scene.layout.HBox <|-- Pane.ItemBox
+@enduml

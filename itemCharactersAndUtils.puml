@@ -1,0 +1,143 @@
+@startuml
+abstract class item.Item {
+# int x
+# int y
+# int size
+# Image image
++ <<Create>> Item(int,int,int,Image)
++ int getX()
++ void setX(int)
++ int getY()
++ void setY(int)
++ int getSize()
++ void setSize(int)
++ Image getImage()
++ void setImage(Image)
++ {abstract}void useItem(Character)
++ void render(GraphicsContext)
+}
+class characters.Salad {
++ <<Create>> Salad(int,int,int[][],int)
++ void moveCharacter(Set<KeyCode>,int,int[][],int)
++ String toString()
+}
+class utils.StartPaneController {
+- Button PlayButton
+- Button exitButton
+- Button helpButton
+- AnchorPane popupHelp
+~ boolean isOpen
++ void StartGame(ActionEvent)
++ void exitProgram(ActionEvent)
+- void HelpPage(ActionEvent)
+}
+class item.Flies {
++ <<Create>> Flies(int,int,int,Image)
++ void useItem(Character)
+}
+class item.Butter {
++ <<Create>> Butter(int,int,int,Image)
++ void useItem(Character)
+}
+class item.Vegetable {
++ <<Create>> Vegetable(int,int,int,Image)
++ void useItem(Character)
+}
+class item.Strawberry {
++ <<Create>> Strawberry(int,int,int,Image)
++ void useItem(Character)
+}
+class characters.Croissant {
++ <<Create>> Croissant(int,int,int[][],int)
++ void moveCharacter(Set<KeyCode>,int,int[][],int)
++ String toString()
+}
+class utils.Goto {
+- {static} RootPane rootPane
++ {static} void setRootPane(RootPane)
++ {static} void clear()
++ {static} void startPage()
++ {static} void startGamePage()
++ {static} void restartGamePage()
++ {static} void popUpHelp()
++ {static} void popUpEnd(Character,boolean)
+}
+interface characters.Moveable {
+~ void moveCharacter(Set<KeyCode>,int,int[][],int)
+}
+class utils.FxmlUtils {
++ {static} void loadFxml(String,Pane)
+}
+class item.BananaPeel {
++ <<Create>> BananaPeel(int,int,int,Image)
++ void useItem(Character)
+}
+abstract class characters.Character {
+- int positionX
+- int positionY
+- int blockSize
+- double width
+- double height
+- int[][] map
+- ImageView imageView
+- Image baseImage
+- Image freezeImage
+- int speed
+- int totalScore
+- boolean isFreeze
+- int pointToMinus
+- int pointToAdd
++ <<Create>> Character(ImageView,double,double,int,int,int[][],int,Image,Image)
++ void increaseTotalScore(int)
++ void decreaseTotalScore(int)
++ void setWidth(double)
++ void setHeight(double)
++ void setMap(int[][])
++ void setBaseImage(Image)
++ void setFreezeImage(Image)
++ void setBlockSize(int)
++ void setPointToMinus(int)
++ void setPointToAdd(int)
++ int getPointToMinus()
++ int getPointToAdd()
++ int getSpeed()
++ void setSpeed(int)
++ ImageView getImageView()
++ void setImageView(ImageView)
++ double getWidth()
++ double getHeight()
++ int getPositionX()
++ void setPositionX(int)
++ int getPositionY()
++ void setPositionY(int)
++ void setTotalScore(int)
++ int getTotalScore()
++ boolean isFreeze()
++ void setFreeze(boolean)
++ boolean checkItemCollision(int[][],int,int,int)
++ {abstract}void moveCharacter(Set<KeyCode>,int,int[][],int)
++ void render(GraphicsContext)
+}
+class item.Cheese {
++ <<Create>> Cheese(int,int,int,Image)
++ void useItem(Character)
+}
+class utils.Config {
++ {static} int BLOCK_SIZE
++ {static} int N_BLOCKS
++ {static} int SCREEN_SIZE
++ {static} String STAR_IMAGE_PATH
++ {static} boolean isFirstTime
+}
+
+
+characters.Character <|-- characters.Salad
+item.Item <|-- item.Flies
+item.Item <|-- item.Butter
+item.Item <|-- item.Vegetable
+item.Item <|-- item.Strawberry
+characters.Character <|-- characters.Croissant
+item.Item <|-- item.BananaPeel
+characters.Moveable <|.. characters.Character
+item.Item <|-- item.Cheese
+@enduml
